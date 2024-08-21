@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "mkprofileimg"
+version = "0.1.0"
+description = "Generate profile images"
+authors = ["Roee Shapira <35409124+5c077m4n@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+diffusers = "^0.30.0"
+torch = "^2.4.0"
+transformers = "^4.44.1"
+sentencepiece = "^0.2.0"
+protobuf = "^5.27.3"
+accelerate = "^0.33.0"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.11.1"
+black = "^24.8.0"
+isort = "^5.13.2"
+
+[tool.poetry.virtualenvs]
+in-project = true
+
+[tool.isort]
+profile = "black"
+
+[tool.poetry.scripts]
+start = "mkprofileimg.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
