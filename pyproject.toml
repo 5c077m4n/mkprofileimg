@@ -18,6 +18,7 @@ accelerate = "^0.33.0"
 mypy = "^1.11.1"
 black = "^24.8.0"
 isort = "^5.13.2"
+pyright = "^1.1.377"
 
 [tool.poetry.virtualenvs]
 in-project = true
@@ -27,6 +28,11 @@ profile = "black"
 
 [tool.poetry.scripts]
 start = "mkprofileimg.main:main"
+
+[tool.pyright]
+include = ["./mkprofileimg/"]
+exclude = ["**/node_modules", "**/__pycache__", "**/.mypy_cache"]
+venvPath = "./.venv/"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,6 +1,6 @@
 import os
 
-from diffusers import FluxPipeline
+from diffusers.pipelines import FluxPipeline
 from torch import Generator, bfloat16
 
 
