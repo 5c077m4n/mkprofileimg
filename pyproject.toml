@@ -19,12 +19,16 @@ mypy = "^1.11.1"
 black = "^24.8.0"
 isort = "^5.13.2"
 pyright = "^1.1.377"
+pylint = "^3.2.6"
 
 [tool.poetry.virtualenvs]
 in-project = true
 
 [tool.isort]
 profile = "black"
+
+[tool.pylint.MASTER]
+init-hook = "import sys; sys.path.append('.')"
 
 [tool.poetry.scripts]
 start = "mkprofileimg.main:main"

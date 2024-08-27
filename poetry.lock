@@ -32,6 +32,17 @@ test-trackers = ["comet-ml", "dvclive", "tensorboard", "wandb"]
 testing = ["bitsandbytes", "datasets", "diffusers", "evaluate", "parameterized", "pytest (>=7.2.0,<=8.0.0)", "pytest-subtests", "pytest-xdist", "scikit-learn", "scipy", "timm", "torchpippy (>=0.2.0)", "tqdm", "transformers"]
 
 [[package]]
+name = "astroid"
+version = "3.2.4"
+description = "An abstract syntax tree for Python with inference support."
+optional = false
+python-versions = ">=3.8.0"
+files = [
+    {file = "astroid-3.2.4-py3-none-any.whl", hash = "sha256:413658a61eeca6202a59231abb473f932038fbcbf1666587f66d482083413a25"},
+    {file = "astroid-3.2.4.tar.gz", hash = "sha256:0e14202810b30da1b735827f78f5157be2bbd4a7a59b7707ca0bfc2fb4c0063a"},
+]
+
+[[package]]
 name = "black"
 version = "24.8.0"
 description = "The uncompromising code formatter."
@@ -239,6 +250,21 @@ quality = ["hf-doc-builder (>=0.3.0)", "isort (>=5.5.4)", "ruff (==0.1.5)", "url
 test = ["GitPython (<3.1.19)", "Jinja2", "compel (==0.1.8)", "datasets", "invisible-watermark (>=0.2.0)", "k-diffusion (>=0.0.12)", "librosa", "parameterized", "pytest", "pytest-timeout", "pytest-xdist", "requests-mock (==1.10.0)", "safetensors (>=0.3.1)", "scipy", "sentencepiece (>=0.1.91,!=0.1.92)", "torchvision", "transformers (>=4.41.2)"]
 torch = ["accelerate (>=0.31.0)", "torch (>=1.4)"]
 training = ["Jinja2", "accelerate (>=0.31.0)", "datasets", "peft (>=0.6.0)", "protobuf (>=3.20.3,<4)", "tensorboard"]
+
+[[package]]
+name = "dill"
+version = "0.3.8"
+description = "serialize all of Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "dill-0.3.8-py3-none-any.whl", hash = "sha256:c36ca9ffb54365bdd2f8eb3eff7d2a21237f8452b57ace88b1ac615b7e815bd7"},
+    {file = "dill-0.3.8.tar.gz", hash = "sha256:3ebe3c479ad625c4553aca177444d89b486b1d84982eeacded644afc0cf797ca"},
+]
+
+[package.extras]
+graph = ["objgraph (>=1.7.2)"]
+profile = ["gprof2dot (>=2022.7.29)"]
 
 [[package]]
 name = "filelock"
@@ -457,6 +483,17 @@ files = [
     {file = "MarkupSafe-2.1.5-cp39-cp39-win32.whl", hash = "sha256:00e046b6dd71aa03a41079792f8473dc494d564611a8f89bbbd7cb93295ebdcf"},
     {file = "MarkupSafe-2.1.5-cp39-cp39-win_amd64.whl", hash = "sha256:fa173ec60341d6bb97a89f5ea19c85c5643c1e7dedebc22f5181eb73573142c5"},
     {file = "MarkupSafe-2.1.5.tar.gz", hash = "sha256:d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"},
+]
+
+[[package]]
+name = "mccabe"
+version = "0.7.0"
+description = "McCabe checker, plugin for flake8"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "mccabe-0.7.0-py2.py3-none-any.whl", hash = "sha256:6c2d30ab6be0e4a46919781807b4f0d834ebdd6c6e3dca0bda5a15f863427b6e"},
+    {file = "mccabe-0.7.0.tar.gz", hash = "sha256:348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325"},
 ]
 
 [[package]]
@@ -934,6 +971,30 @@ files = [
 
 [package.extras]
 test = ["enum34", "ipaddress", "mock", "pywin32", "wmi"]
+
+[[package]]
+name = "pylint"
+version = "3.2.6"
+description = "python code static checker"
+optional = false
+python-versions = ">=3.8.0"
+files = [
+    {file = "pylint-3.2.6-py3-none-any.whl", hash = "sha256:03c8e3baa1d9fb995b12c1dbe00aa6c4bcef210c2a2634374aedeb22fb4a8f8f"},
+    {file = "pylint-3.2.6.tar.gz", hash = "sha256:a5d01678349454806cff6d886fb072294f56a58c4761278c97fb557d708e1eb3"},
+]
+
+[package.dependencies]
+astroid = ">=3.2.4,<=3.3.0-dev0"
+colorama = {version = ">=0.4.5", markers = "sys_platform == \"win32\""}
+dill = {version = ">=0.3.7", markers = "python_version >= \"3.12\""}
+isort = ">=4.2.5,<5.13.0 || >5.13.0,<6"
+mccabe = ">=0.6,<0.8"
+platformdirs = ">=2.2.0"
+tomlkit = ">=0.10.1"
+
+[package.extras]
+spelling = ["pyenchant (>=3.2,<4.0)"]
+testutils = ["gitpython (>3)"]
 
 [[package]]
 name = "pyright"
@@ -1453,6 +1514,17 @@ docs = ["setuptools-rust", "sphinx", "sphinx-rtd-theme"]
 testing = ["black (==22.3)", "datasets", "numpy", "pytest", "requests", "ruff"]
 
 [[package]]
+name = "tomlkit"
+version = "0.13.2"
+description = "Style preserving TOML library"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "tomlkit-0.13.2-py3-none-any.whl", hash = "sha256:7a974427f6e119197f670fbbbeae7bef749a6c14e793db934baefc1b5f03efde"},
+    {file = "tomlkit-0.13.2.tar.gz", hash = "sha256:fff5fe59a87295b278abd31bec92c15d9bc4a06885ab12bcea52c71119392e79"},
+]
+
+[[package]]
 name = "torch"
 version = "2.4.0"
 description = "Tensors and Dynamic neural networks in Python with strong GPU acceleration"
@@ -1666,4 +1738,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "f418d88a1df7d4d434ef9a00c5aae301ca297d812b9b23163b6b5e3e9731eb0e"
+content-hash = "3c027c0f1e34449466ff02fe45880791cbfbafdcffce73081c3b9896c09361fc"
