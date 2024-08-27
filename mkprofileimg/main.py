@@ -1,3 +1,5 @@
+"""mkprofileimg"""
+
 import os
 
 from diffusers.pipelines import FluxPipeline
@@ -5,6 +7,7 @@ from torch import Generator, bfloat16
 
 
 def main() -> None:
+    """Entrypoint to profile images generation"""
     os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
     pipe = FluxPipeline.from_pretrained(
@@ -12,7 +15,13 @@ def main() -> None:
     )
     pipe.enable_model_cpu_offload(device="cpu")
 
-    prompt = "Can you please generate an ultra-realistic portrait of a young, happy caucasian person, with broad shoulders, wearing an plain oversized t shirt, glasses, bald, with a short beard?"
+    prompt = " ".join(
+        [
+            "Can you please generate an ultra-realistic portrait of a young,",
+            "happy caucasian person, with broad shoulders,",
+            "wearing an plain oversized t shirt, glasses, bald, with a short beard?",
+        ]
+    )
     result = pipe(
         prompt=prompt,
         guidance_scale=0.0,
