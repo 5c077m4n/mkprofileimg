@@ -21,9 +21,6 @@ isort = "^5.13.2"
 pyright = "^1.1.377"
 pylint = "^3.2.6"
 
-[tool.poetry.virtualenvs]
-in-project = true
-
 [tool.isort]
 profile = "black"
 
@@ -36,7 +33,8 @@ start = "mkprofileimg.main:main"
 [tool.pyright]
 include = ["./mkprofileimg/"]
 exclude = ["**/node_modules", "**/__pycache__", "**/.mypy_cache"]
-venvPath = "./.venv/"
+venv = "./.venv/"
+venvPath = "."
 
 [build-system]
 requires = ["poetry-core"]
